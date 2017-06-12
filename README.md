@@ -1,2 +1,2 @@
 # Java-Practice
-Some code of data structures and algorithms in Java
+Some codes of data structures and algorithms in Java
