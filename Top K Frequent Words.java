@@ -21,8 +21,11 @@ public class Solution {
     }
     
     // Get the top k frequent characters
-    Map<String, Integer> freqMap = getFreqMap(combo);
+    Map<String, Integer> freqMap = getFreqMap(combo);   // Get the Hashmap of each string in the combo and its freqence
     
+    /*
+     * New a priority queue in minheap
+     */
     PriorityQueue<Map.Entry<String, Integer>> minHeap = new PriorityQueue<>(k, new Comparator<Map.Entry<String, Integer>>() {
       @Override
       public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
@@ -30,6 +33,9 @@ public class Solution {
       }
     });
     
+    /*
+     * Traverse the hashmap's entries and put the top k frequent string into the minheap
+     */
     for (Map.Entry<String, Integer> entry : freqMap.entrySet()) {
       if (minHeap.size() < k) {
         minHeap.offer(entry);
@@ -44,6 +50,9 @@ public class Solution {
     return getResult(minHeap);
   }
   
+  /*
+   * Return a new Hashmap that contains each string in the combo and the corresponding freqence
+   */
   private Map<String, Integer> getFreqMap(String[] combo) {
     Map<String, Integer> freqMap = new HashMap<>();
     for (String s : combo) {
@@ -58,6 +67,9 @@ public class Solution {
     return freqMap;
   }
   
+  /*
+   * Return the result
+   */
   private String[] getResult(PriorityQueue<Map.Entry<String, Integer>> minHeap) {
     String[] result = new String[minHeap.size()];
     for (int i = minHeap.size() - 1; i >= 0; i--) {
