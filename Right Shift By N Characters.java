@@ -13,13 +13,22 @@ public class Solution {
     
     // Right shift
     char[] string = input.toCharArray();
-    n = n % string.length;
+    n = n % string.length;                // Make sure that the how many characters we actually need to shift
+    /*
+     * This is a conclusion mathmatically
+     * In order to right shift a string by n characters, we first reverse the last n characters of the string
+     * Then we reverse the remaining characters
+     * Lastly, we reverse the whole string
+     */
     reverse(string, string.length - n, string.length - 1);
     reverse(string, 0, string.length - n - 1);
     reverse(string, 0, string.length - 1);
     return new String(string);
   }
   
+  /*
+   * This function reverse a char array in the given scope
+   */
   private void reverse(char[] string, int i, int j) {
     while (i < j) {
       char temp = string[i];
