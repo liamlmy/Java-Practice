@@ -21,9 +21,9 @@ public class Solution {
     }
     
     // Get the top k frequent characters
-    Mat<String, Integer> freqMap = getFreqMap(combo);
+    Map<String, Integer> freqMap = getFreqMap(combo);
     
-    PriorityQueue<Map, Entry<String, Integer>> minHeap = new PriorityQueue<>(k, new Comparator<Map.Entry<String, Integer>> {
+    PriorityQueue<Map.Entry<String, Integer>> minHeap = new PriorityQueue<>(k, new Comparator<Map.Entry<String, Integer>>() {
       @Override
       public int compare(Map.Entry<String, Integer> e1, Map.Entry<String, Integer> e2) {
         return e1.getValue().compareTo(e2.getValue());
@@ -34,7 +34,7 @@ public class Solution {
       if (minHeap.size() < k) {
         minHeap.offer(entry);
       } else {
-        if (minHeap.peak().getValue() < entry.getValue()) {
+        if (minHeap.peek().getValue() < entry.getValue()) {
           minHeap.poll();
           minHeap.offer(entry);
         }
@@ -58,10 +58,10 @@ public class Solution {
     return freqMap;
   }
   
-  private String[] gerResult(PriorityQueue<Map.Entry<String, Integer>> minHeap) {
+  private String[] getResult(PriorityQueue<Map.Entry<String, Integer>> minHeap) {
     String[] result = new String[minHeap.size()];
     for (int i = minHeap.size() - 1; i >= 0; i--) {
-      result[i] = minHeap.poll().getKey()
+      result[i] = minHeap.poll().getKey();
     }
     
     return result;
