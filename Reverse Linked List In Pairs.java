@@ -29,7 +29,7 @@ public class Solution {
    */
    /*
    public ListNode reverseInPairs(ListNode head) {
-    ListNode dummyHead = new ListNode(0);     // Need a dummy head
+    ListNode dummyHead = new ListNode(0);                           // Need a dummy head
     dummyHead.next = head;
     ListNode current = dummyHead;
     while (current.next != null && current.next.next != null) {     // Known four nodes
