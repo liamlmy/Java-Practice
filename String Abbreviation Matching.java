@@ -50,6 +50,7 @@ public class Solution{
 /*
  * Method 2: Recursion way
  */
+/*
 public class Solution {
   public boolean match(String input, String pattern) {
     int i = 0;
@@ -73,3 +74,4 @@ public class Solution {
     return i == input.length() && j == pattern.length();
   }
 }
+*/
