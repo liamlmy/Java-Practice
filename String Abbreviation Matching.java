@@ -8,6 +8,9 @@
 // Examples:
 // pattern “s11d” matches input “sophisticated” since “11” matches eleven chars “ophisticate”.
 
+/*
+ * Method 1: Recursion way
+ */
 public class Solution{
   public boolean match(String input, String pattern) {
     return match(input, pattern, 0, 0);
@@ -41,5 +44,32 @@ public class Solution{
       j++;
     }
     return match(input, pattern, i + count, j);
+  }
+}
+
+/*
+ * Method 2: Recursion way
+ */
+public class Solution {
+  public boolean match(String input, String pattern) {
+    int i = 0;
+    int j = 0;
+    while (i < input.length() && j < pattern.length()) {
+      if (pattern.charAt(j) < '0' || pattern.charAt(j) > '9') {
+        if (pattern.charAt(j) != input.charAt(i)) {
+          return false;
+        }
+        i++;
+        j++;
+      } else {
+        int count = 0;
+        while (j < pattern.length() && pattern.charAt(j) >= '0' && pattern.charAt(j) <= '9') {
+          count = count * 10 + (pattern.charAt(j) - '0');
+          j++;
+        }
+        i += count;
+      }
+    }
+    return i == input.length() && j == pattern.length();
   }
 }
