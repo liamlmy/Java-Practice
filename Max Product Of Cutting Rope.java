@@ -15,11 +15,16 @@ public class Solution {
     }
     
     // Dynamic Programming
+    // array[i] represent the maximum product of i-meters rope
     int[] array = new int[length + 1];
     array[1] = 0;
     array[2] = 1;
     for (int i = 3; i < array.length; i++) {
+      // At least, one of the partitions after cutting is smaller or equal to i/2,
+      // so we can pick that partition and find the maximum product.
       for (int j = 1; j <= i / 2; j++) {
+        // For the other partition, we can choose not cutting it or cutting it,
+        // so the max number we can get is either i - j or array[i - j].
         array[i] = Math.max(array[i], j * Math.max(i - j, array[i - j]));
       }
     }
