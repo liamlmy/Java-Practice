@@ -9,6 +9,9 @@
 // {1, 3, 2, 0, 3}, we are able to reach the end of array(jump to index 1 then reach the end of the array)
 // {2, 1, 1, 0, 2}, we are not able to reach the end of array
 
+/*
+ * Method 1: DP
+ */
 public class Solution {
   public boolean canJump(int[] array) {
     // Corner check
@@ -31,3 +34,37 @@ public class Solution {
     return M[0];
   }
 }
+
+/*
+ * Method 2: DP
+ */
+/*
+public class Solution {
+  public boolean canJump(int[] array) {
+    // Corner check
+    if (array.length == 1) {
+      return true;
+    }
+    // Dynamic Programming
+    boolean[] M = new boolean[array.length];
+    M[0] = true;
+    for (int i = 1; i < array.length; i++) {
+      for (int j = 0; j < i; j++) {
+        if (M[j] && array[j] + j >= i) {
+          M[i] = true;
+          break;
+        } else {
+          M[i] = false;
+        }
+      }
+    }
+    return M[M.length - 1];
+  }
+}
+*/
+
+/*
+ * Method 3: Greedy solution
+ */
+// ??????????????????????????
+
