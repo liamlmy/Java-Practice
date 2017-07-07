@@ -23,11 +23,15 @@ public class Solution {
     if (N == 0) {   // Corner case
       return 0;
     }
+    // up records the longest possible length for the two upper arms ending at each cells in the matrix
     int[][] up = up(matrix, M, N);
+    // down records the longest possible length for the two down arms ending at each cells in teh matrix
     int[][] down = down(matrix, M, N);
+    // merge the two matrxi by getting the min value for each cell, and among all the cells get the max value
     return merge(up, down, M, N);
   }
   
+  // calculate the max possible length of down arms for each of the cells in the matrix
   private int[][] up(int[][] matrix, int M, int N) {
     int[][] left = new int[M][N];
     int[][] right = new int[M][N];
@@ -70,6 +74,7 @@ public class Solution {
     return left;
   }
   
+  // calculate the max possible length of up arms for each of the cells in the matrix
   private int[][] down(int[][] matrix, int M, int N) {
     int[][] left = new int[M][N];
     int[][] right = new int[M][N];
@@ -102,6 +107,9 @@ public class Solution {
     return left;
   }
   
+  // merge up and down matrix in to up,
+  // the value of each cell is min value of the corresponding cells in the two matrix,
+  // also it returns the max value among all the cells in the merged matrix
   private int merge(int[][] A, int[][] B, int M, int N) {
     int result = 0;
     for (int i = 0; i < M; i++) {
