@@ -2,7 +2,7 @@
 // are equally likely to be generated.
 //
 // Assumptions
-// The given array is not null
+// The given array is not null.
 
 public class Solution {
   public void shuffle(int[] array) {
