@@ -21,6 +21,10 @@ public class Solution {
     // Binary Searching
     int left = 0;
     int right = array.length - 1;
+    // We need to use left < right - 1 to avoid infinite loop.
+    // Think about the case that left == right - 1,
+    // then mid = left, it will possible picking [mid, right] for the next round
+    // and it will go into an infinite loop in that case.
     while (left < right - 1) {       // In element's first or last occurence searching,
                                      // when left and right adjacent, stop searching.
       int mid  = left + (right - left) / 2;
