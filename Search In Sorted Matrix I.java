@@ -25,8 +25,8 @@ public class Solution {
     int end = m * n - 1;
     while (start <= end) {
       int mid =  start + (end - start) / 2;
-      int row = mid / m;
-      int col = mid % m;
+      int row = mid / n;
+      int col = mid % n;
       if (matrix[row][col] > target) {
         end = mid - 1;
       } else if (matrix[row][col] < target) {
