@@ -29,6 +29,10 @@
 //
 //     4
 
+/*
+ * Method 1: Recursion way
+ */
+/*
 public class Solution {
   public List<Integer> preOrder(TreeNode root) {
     List<Integer> result = new ArrayList<Integer>();
@@ -50,5 +54,33 @@ public class Solution {
     result.add(root.key);
     traverse(root.left, result);
     traverse(root.right, result);
+  }
+}
+*/
+
+public class Solution {
+  public List<Integer> preOrder(TreeNode root) {
+    List<Integer> result = new ArrayList<Integer>();
+    // Corner check
+    if (root == null) {
+      return result;
+    }
+    // Traverse the tree
+    Deque<TreeNode> stack = new LinkedList<TreeNode>();
+    stack.offerFirst(root);
+    while (!stack.isEmpty()) {
+      TreeNode cur = stack.pollFirst();
+      // The left subtree should traverse before the right subtree,
+      // since stack is LIFO, we should first push the right node into the stack,
+      // so for the next step, the top element of the stack is the left subtree.
+      if (cur.right != null) {
+        stack.offerFirst(cur.right);
+      }
+      if (cur.left != null) {
+        stack.offerFirst(cur.left);
+      }
+      result.add(cur.key);
+    }
+    return result;
   }
 }
