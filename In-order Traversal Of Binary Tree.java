@@ -59,6 +59,9 @@ public class Solution {
 }
 */
 
+/*
+ * Method 2: traverse way
+ */
 public class Solution {
   public List<Integer> inOrder(TreeNode root) {
     List<Integer> result = new ArrayList<Integer>();
