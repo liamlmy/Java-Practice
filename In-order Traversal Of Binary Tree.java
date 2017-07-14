@@ -30,6 +30,10 @@
 //
 //     4
 
+/*
+ * Method 1: Recursion way
+ */
+/*
 public class Solution {
   public List<Integer> inOrder(TreeNode root) {
     List<Integer> result = new ArrayList<Integer>();
@@ -51,5 +55,30 @@ public class Solution {
     traverse(root.left, result);
     result.add(root.key);
     traverse(root.right, result);
+  }
+}
+*/
+
+public class Solution {
+  public List<Integer> inOrder(TreeNode root) {
+    List<Integer> result = new ArrayList<Integer>();
+    Deque<TreeNode> stack = new LinkedList<TreeNode>();
+    TreeNode cur = root;
+    while (cur != null || !stack.isEmpty()) {
+      // Always try to go left side to see if there is any node should be traversed before the current node,
+      // current node is stored on stack since it has not been traversed yet.
+      if (cur != null) {
+        stack.offerFirst(cur);
+        cur = cur.left;
+      } else {
+        // If cannot go left meaning that all the nodes on the left side of the top node on stack have been
+        // traversed, the next traversing node should be the top node on the stack.
+        cur = stack.pollFirst();
+        result.add(cur.key);
+        // The next subtree we want to traverse is current's right node.
+        cur = cur.right;
+      }
+    }
+    return result;
   }
 }
