@@ -11,7 +11,7 @@
 // “a1c0b2c4” → “abbcccc”
 
 /*
- * Use in-place method, two pointers
+ * Method 1: Use in-place method, two pointers
  */
 class Solution {
   public String decompress(String input) {
@@ -90,3 +90,24 @@ class Solution {
     return array[i] - '0';
   }
 }
+
+/*
+ * Method 2: Use StringBuilder
+ */
+/*
+public class Solution {
+  public String decompress(String input) {
+    char[] array = input.toCharArray();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < array.length; i++) {
+      char ch = array[i];
+      i++;
+      int count = array[i] - '0';
+      for (int j = 0; j < count; j++) {
+        sb.append(ch); 
+      }
+    }
+    return sb.toString();
+  }
+}
+*/
