@@ -48,7 +48,7 @@ public class Solution{
 }
 
 /*
- * Method 2: Recursion way
+ * Method 2: Iteration way
  */
 /*
 public class Solution {
