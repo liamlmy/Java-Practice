@@ -22,9 +22,7 @@ public class Solution {
     for (int i = 0; i < array.length - 1; i++) {
       int minIndex = i;
       for (int j = i; j < array.length; j++) {
-        if (array[minIndex] > array[j]) {
-          minIndex = j;
-        }
+        minIndex = array[minIndex] > array[j] ? j : minIndex;
       }
       swap(array, i, minIndex);
     }
@@ -37,3 +35,6 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// Time complexity O(n) = n + n - 1 + n - 2 + ... + 2 + 1 = O(n^2)
+// Space complexity O(n) = O(1);
