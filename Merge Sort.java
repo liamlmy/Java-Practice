@@ -19,7 +19,7 @@ public class Solution {
     }
     
     // Merger sorting
-    int[] helper = new int[array.length];
+    int[] helper = new int[array.length];             // !Important: Do not initialize the helper[] here.
     mergerSort(array, helper, 0, array.length - 1);
     return array;
   }
@@ -65,3 +65,6 @@ public class Solution {
     }
   }
 }
+
+// Time complexity O(n) = O(n + log(n) * n) = O(nlog(n))
+// Time complexity O(n) = O(n) (It is not O(log(n)) which is the level of the recursion tree!)
