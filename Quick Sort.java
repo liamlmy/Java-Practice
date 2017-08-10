@@ -39,15 +39,15 @@ public class Solution {
     int j = right - 1;
     // the compare processing is important and rigorous
     while (i <= j) {      // leftBound (i) = rightBound (j) should be considered
-      if (array[i] < pivot && array[j] >= pivot) {
-        i++;
-        j--;
-      } else if (array[i] >= pivot) {
+      if (array[i] >= pivot) {
         swap(array, i, j);
         j--;
       } else if (array[j] < pivot) {
         swap(array, i, j);
         i++;
+      } else {
+        i++;
+        j--;
       }
     }
     swap(array, i, right);      // Put back the pivot to the position where leftBound (i) pointed now
@@ -67,3 +67,6 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// Time complexity O(n) = O(nlog(n))
+// Space complexity O(n) = O(1)
