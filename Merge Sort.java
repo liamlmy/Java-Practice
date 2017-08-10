@@ -59,9 +59,7 @@ public class Solution {
     while (i <= mid) {           //there may left some unfinished part in the left subarray which need to put them in
                                  //to the correct place
                                  //the left right part needs no operate, since they are already in the correct place
-      array[left] = helper[i];
-      left++;
-      i++;
+      array[left++] = helper[i++];
     }
   }
 }
