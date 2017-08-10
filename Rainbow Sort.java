@@ -29,6 +29,7 @@ public class Solution {
     int g = 0;
     int b = array.length - 1;
     while (g <= b) {
+      // In this situation, we just use the middle boardclap (g) to make the judgement.
       if (array[g] < 0) {
         swap(array, r, g);
         r++;
@@ -49,3 +50,6 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// Time complexity O(n) = O(n)
+// Space complexity O(n) = O(1)
