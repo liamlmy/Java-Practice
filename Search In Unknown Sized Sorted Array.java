@@ -40,3 +40,6 @@ public class Solution {
     return -1;
   }
 }
+
+// Time complexity O(n) = O(log(n) + log(2n))
+// Space complexity O(n) = O(1)
