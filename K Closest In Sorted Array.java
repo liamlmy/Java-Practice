@@ -48,3 +48,6 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity O(n) = O(log(n) + k)
+// Space complexity O(n) = O(k)
