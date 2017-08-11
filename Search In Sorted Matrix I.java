@@ -38,3 +38,6 @@ public class Solution {
     return new int[] {-1, -1};
   }
 }
+
+// Time complexity O(n) = O(log(n))
+// Space complexity O(n) O(1)
