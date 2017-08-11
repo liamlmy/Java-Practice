@@ -48,6 +48,9 @@ public class Solution {
     return array[K];
   }
 }
+
+// Time Complexity O(n) = O(n)
+// Space Complexity O(n) = O(n)
 */
 
 /*
@@ -75,6 +78,9 @@ public class Solution {
     return b;
   }
 }
+
+// Time Complexity O(n) = O(n)
+// Space Complexity O(n) = O(1)
 */
 
 /*
@@ -94,4 +100,7 @@ public class Solution {
     return fabonacci(K - 1) + fabonacci(K - 2);
   }
 }
+
+// Time Complexity O(n) = O(2^n)
+// Space Complexoity O(n) = O(n)
 */
