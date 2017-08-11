@@ -24,3 +24,6 @@ public class Solution {
     return b % 2 == 0 ? temp * temp : temp * temp * a;
   }
 }
+
+// Time Complexity O(n) = O(log(n))
+// Space Complexity O(n) = O(log(n))
