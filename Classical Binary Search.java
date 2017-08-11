@@ -34,3 +34,6 @@ public class Solution {
     return -1;    // No target in the array
   }
 }
+
+// Time complexity O(n) = O(log(n))
+// Space complexity O(n) = O(1)
