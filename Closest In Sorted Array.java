@@ -36,3 +36,6 @@ public class Solution {
     return Math.abs(array[left] - target) >= Math.abs(array[right] - target) ? right : left;
   }
 }
+
+// Time complexity O(n) = O(log(n))
+// Space complexity O(n) = O(1)
