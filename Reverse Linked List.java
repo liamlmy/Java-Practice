@@ -30,12 +30,19 @@ public class Solution {
 public class Solution {
   public ListNode reverse(ListNode head) {
     // Corner check
-    if (head == null) {
+    if (head == null || head.next == null) {
       return head;
     }
     // Iteration way
-    while (head.next != null) {
-      ListNode newHead = head.next.next
+    ListNode cur = head;
+    ListNode next = null;
+    ListNode prev = null;
+    while (cur != null) {
+      next = cur.next;
+      cur.next = prev;
+      prev = cur;
+      cur = next;
     }
+    return prev;
   }
 }
