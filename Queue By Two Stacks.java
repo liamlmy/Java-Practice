@@ -51,3 +51,6 @@ public class Solution {
     }
   }
 }
+
+// Time complexity: O(n) = O(n); Amortized time complexity: O(n) = O(1)
+// Space complexity: O(n) = O(n)
