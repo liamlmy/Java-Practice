@@ -64,3 +64,6 @@ public class Solution {
     return dummyHead.next;
   }
 }
+
+// Time complexity: O(n) = O(n + n / 2 + n) = O(n)
+// Space complexity: O(n) = O(1)
