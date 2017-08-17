@@ -19,3 +19,6 @@ public class Solution {
     return false;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
