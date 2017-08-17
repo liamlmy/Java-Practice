@@ -33,3 +33,6 @@ public class Solution {
     return dummyNode.next;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
