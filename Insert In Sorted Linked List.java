@@ -25,3 +25,6 @@ public class Solution {
     return head;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
