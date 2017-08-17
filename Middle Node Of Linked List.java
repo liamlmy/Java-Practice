@@ -8,7 +8,7 @@
 // L = 1 -> 2 -> 3 -> 4 -> null, return 2
 
 public class Solution {
-  public ListNode middleNode(ListNode head) {
+  public ListNode middleNode(ListNode head) {   // This is an on-line algorithm
     // Corner check
     if (head == null || head.next == null) {
       return head;
@@ -25,3 +25,6 @@ public class Solution {
     return slow;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
