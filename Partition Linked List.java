@@ -28,3 +28,6 @@ public class Solution {
     return small.next;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
