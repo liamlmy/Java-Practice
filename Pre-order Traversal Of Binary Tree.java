@@ -56,6 +56,9 @@ public class Solution {
     traverse(root.right, result);
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
 */
 
 public class Solution {
@@ -84,3 +87,6 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
