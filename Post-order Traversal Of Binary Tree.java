@@ -117,21 +117,24 @@ public class Solution {
       TreeNode cur = stack.peekFirst();
       // If we are going down, either left or right direction.
       if (prev == null || cur == prev.left || cur == prev.right) {
+        // Case 1: from parent or at the beginning
         // If we can still go down, try go left first.
-        if (cur.left != null) {
+        if (cur.left != null) {             // Case 1.1: go to left
           stack.offerFirst(cur.left);
-        } else if (cur.right != null) {
+        } else if (cur.right != null) {     // Case 1.2: go to right
           stack.offerFirst(cur.right);
-        } else {
+        } else {                            // Case 1.3: cannot go down
           // If we cannot go either way, meaning cur is a leaf.
           result.add(cur.key);
           stack.pollFirst();
         }
       } else if (prev == cur.right || prev == cur.left && cur.right == null) {
+        // Case 2: from right or from left but right is null
         // If we are going up from the right side or going up from the left side but we cannot go right afterwards.
         result.add(cur.key);
         stack.pollFirst();
       } else {
+        // Case 3: from left and right is not null
         // Otherwise, we are going up from the left side and we can go down right side.
         stack.offerFirst(cur.right);
       }
