@@ -56,11 +56,15 @@ public class Solution {
     result.add(root.key);
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n) ???
 */
 
 /*
  * Method 2: Iteration way with reverse pre-order.
  */
+/*
 public class Solution {
   public List<Integer> postOrder(TreeNode root) {
     List<Integer> result = new ArrayList<Integer>();
@@ -88,6 +92,10 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n) ???
+*/
 
 /*
  * Method 3: Iteration way
@@ -132,3 +140,6 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n) ???
