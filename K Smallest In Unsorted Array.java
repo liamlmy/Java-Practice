@@ -46,6 +46,9 @@ public class Solution {
   }
 }
 
+// Time complexity: O(n) = O(n + (n - k)log(n - k))
+// Space complexity: O(n) = O(k)
+
 /*
  * Method 2: Quick sort
  */
@@ -98,4 +101,7 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// Time complexity: O(n) = O(nlogn)
+// Space complexity: O(n) = O(1)
 */
