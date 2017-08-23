@@ -62,3 +62,6 @@ public class Solution {
     return check(left.left, right.right) && check(left.right, right.left);
   }
 }
+
+// Time Complexity: O(n) = O(n)
+// Space Complexity: O(n) = O(n)
