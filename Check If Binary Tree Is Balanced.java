@@ -68,9 +68,6 @@ public class Solution {
       return -1;
     }
     // If the tree is not balanced, return -1.
-    if (Math.abs(left - right) > 1) {
-      return -1;
-    }
-    return Math.max(left, right) + 1;
+    return Math.abs(right - left) > 1 ? -1 : Math.max(right, left) + 1;
   }
 }
