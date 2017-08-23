@@ -58,7 +58,7 @@ public class Solution {
     } else if (left.key != right.key) {
       return false;
     }
-    // Recursion rule'
+    // Recursion rule
     return check(left.left, right.right) && check(left.right, right.left);
   }
 }
