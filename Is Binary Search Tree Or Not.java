@@ -31,3 +31,6 @@ public class Solution {
     return check(root.left, min, root.key - 1) && check(root.right, root.key + 1, max);
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
