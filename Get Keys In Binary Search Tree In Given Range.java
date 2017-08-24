@@ -55,5 +55,5 @@ public class Solution {
   }
 }
 
-// Time complexity: O(n) = O(n)
-// Space complexity: O(n) = O(n)
+// Time complexity: O(n) = O(logn) + how many nodes in the given range
+// Space complexity: O(n) = O(logn)
