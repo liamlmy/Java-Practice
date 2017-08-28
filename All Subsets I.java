@@ -40,6 +40,9 @@ public class Solution {
     DFS(array, result, subSet, depth + 1);
   }
 }
+
+// Time complexity: O(n) = O(2^n)
+// Space complexity: O(n) = O(n^2) ???
 */
 
 /*
@@ -70,3 +73,6 @@ public class Solution {
     }
   }
 }
+
+// Time complexity: O(n) = O(2^n)
+// Space complexity: O(n) = O(n^2) ???
