@@ -42,7 +42,7 @@ public class Solution {
 }
 
 // Time complexity: O(n) = O(2^n)
-// Space complexity: O(n) = O(n^2) ???
+// Space complexity: O(n) = O(n) ???
 */
 
 /*
@@ -75,4 +75,4 @@ public class Solution {
 }
 
 // Time complexity: O(n) = O(2^n)
-// Space complexity: O(n) = O(n^2) ???
+// Space complexity: O(n) = O(n) ???
