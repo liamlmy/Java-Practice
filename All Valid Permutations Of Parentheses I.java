@@ -35,3 +35,6 @@ public class Solution {
     }
   }
 }
+
+// Time complexity: O(2^(2n))
+// Space complexity: O(2n)
