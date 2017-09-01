@@ -30,6 +30,9 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n) = O(n + m)
+// Time complexity: O(n) = O(1)
 */
 
 /*
@@ -68,3 +71,6 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n) = O(n + m)
+// Time complexity: O(n) = O(n + m)
