@@ -27,6 +27,9 @@ public class Solution {
     return n;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
 */
 
 /*
@@ -45,6 +48,9 @@ public class Solution {
     return (int) (target - sum);
   }
 }
+
+// Time complexity: O(1)
+// Space complexity: O(1)
 */
 
 /*
@@ -66,6 +72,9 @@ public class Solution {
     return xor;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
 */
 
 /*
@@ -99,3 +108,6 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
