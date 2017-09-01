@@ -43,6 +43,9 @@ public class Solution {
     return true;
   }
 }
+
+// Time complexity: O(n) = O(n + m)
+// Space complexity: O(n) = O(1);
 */
 
 /*
