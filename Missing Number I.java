@@ -49,7 +49,7 @@ public class Solution {
   }
 }
 
-// Time complexity: O(1)
+// Time complexity: O(n)
 // Space complexity: O(1)
 */
 
