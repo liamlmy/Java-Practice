@@ -32,3 +32,6 @@ public class Solution {
     return new String(array, 0, j);
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
