@@ -79,3 +79,6 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n) = O(k + (n - k)logk)
+// Space complexity: O(n) = O(k)
