@@ -47,3 +47,6 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// Time complexity: O(n) = O(n!)
+// Space complexity: O(n) = O(n)
