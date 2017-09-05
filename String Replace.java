@@ -101,3 +101,6 @@ public class Solution {
     return matches;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
