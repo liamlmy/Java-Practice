@@ -43,3 +43,6 @@ public class Solution {
     return left == null ? right : left;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
