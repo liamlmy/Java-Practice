@@ -18,3 +18,6 @@ public class Solution {
     return new String(array);
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: O(n)
