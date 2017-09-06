@@ -91,6 +91,9 @@ class Solution {
   }
 }
 
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n) --> char[]
+
 /*
  * Method 2: Use StringBuilder
  */
@@ -111,3 +114,6 @@ public class Solution {
   }
 }
 */
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
