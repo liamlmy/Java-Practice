@@ -18,10 +18,20 @@ public class Solution {
       return array;
     }
     // Reorder the array
+    int[] result = new int[array.length];
     int i = 0;
     int j = array.length / 2;
+    int index = 0;
     while (i < array.length / 2) {
-      
+      result[index++] = array[i++];
+      result[index++] = array[j++];
     }
+    while (j < array.length) {
+      result[index++] = array[j++];
+    }
+    return result;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
