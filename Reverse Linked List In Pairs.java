@@ -23,12 +23,14 @@ public class Solution {
     newHead.next.next = restHead;
     return newHead;
   }
+  // Time complexity: O(n) = O(n)
+  // Space complexity: O(n) = O(n)
   
   /*
    * Iteration method
    */
    /*
-   public ListNode reverseInPairs(ListNode head) {
+  public ListNode reverseInPairs(ListNode head) {
     ListNode dummyHead = new ListNode(0);                           // Need a dummy head
     dummyHead.next = head;
     ListNode current = dummyHead;
@@ -40,7 +42,9 @@ public class Solution {
       current = current.next.next;
     }
     return dummyHead.next;
-   }
+  }
+  // Time complexity: O(n) = O(n)
+  // Space complexity: O(n) = O(n)
    */
 }
 
