@@ -102,5 +102,5 @@ public class Solution {
   }
 }
 
-// Time complexity: O(n) = O(n)
+// Time complexity: O(n) = O(n * k)
 // Space complexity: O(n) = O(n)
