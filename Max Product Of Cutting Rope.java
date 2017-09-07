@@ -33,3 +33,6 @@ public class Solution {
     return array[length];
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(n)
