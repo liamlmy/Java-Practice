@@ -30,3 +30,6 @@ public class Solution {
     return count;
   }
 }
+
+// Time complexity: O(n) = O(n)
+// Space complexity: O(n) = O(1)
