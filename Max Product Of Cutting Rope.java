@@ -15,7 +15,6 @@ public class Solution {
     if (length == 2) {
       return 1;
     }
-    
     // Dynamic Programming
     // array[i] represent the maximum product of i-meters rope
     int[] array = new int[length + 1];
@@ -34,5 +33,5 @@ public class Solution {
   }
 }
 
-// Time complexity: O(n) = O(n)
+// Time complexity: O(n) = O(n ^ 2)
 // Space complexity: O(n) = O(n)
