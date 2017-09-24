@@ -49,3 +49,6 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n ^ 3)
+// Space complexiyt: O(n)
