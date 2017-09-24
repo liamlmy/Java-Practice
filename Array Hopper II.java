@@ -34,6 +34,9 @@ public class Solution {
   }
 }
 
+// Time complexity: O(n ^ 2)
+// Space complexity: O(n)
+
 /*
  * Method 2: Greedy solution
  */
