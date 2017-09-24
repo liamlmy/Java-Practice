@@ -22,3 +22,6 @@ public class Solution {
     return result;
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: O(1)
