@@ -25,6 +25,9 @@ public class Solution {
   }
 }
 
+// Time complexity: O(1)
+// Space complexity: O(1)
+
 /*
  * Method 2
  */
@@ -45,6 +48,9 @@ public class Solution {
     return count == 1;
   }
 }
+
+// Time complexity: O(1)
+// Space complexity: O(1)
 */
 
 /*
@@ -57,4 +63,7 @@ public class Solution {
     return number > 0 && (number & (number - 1)) == 0;
   }
 }
+
+// Time complexity: O(1)
+// Space complexity: O(1)
 */
