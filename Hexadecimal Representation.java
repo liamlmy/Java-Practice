@@ -25,3 +25,6 @@ public class Solution {
     return prefix + sb.reverse().toString();  // reverse it at last, so in all complexity is O(n)
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: O(1)
