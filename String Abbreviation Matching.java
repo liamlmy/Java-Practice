@@ -47,6 +47,9 @@ public class Solution{
   }
 }
 
+// Time complexity: O(n)
+// Space complexity: O(n)
+
 /*
  * Method 2: Iteration way
  */
@@ -74,4 +77,7 @@ public class Solution {
     return i == input.length() && j == pattern.length();
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: O(n)
 */
