@@ -17,6 +17,7 @@ public class Solution {
     int M = matrix.length;
     int N = matrix[0].length;
     int result = Integer.MIN_VALUE;
+    // Compress the row to use the largest subarray sum method
     for (int i = 0; i < M; i++) {
       int[] cur = new int[N];
       for (int j = i; j < M; j++) {
