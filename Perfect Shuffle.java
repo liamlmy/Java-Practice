@@ -13,7 +13,8 @@ public class Solution {
     
     // Shuffle the array
     for (int i = array.length; i > 0; i--) {
-      int idx = (int) (Math.random() * i);
+      // int result = minimum + (int) (Math.random() * maximum)
+      int idx = 0 + (int) (Math.random() * i);
       swap(array, i - 1, idx);
     }
   }
@@ -24,3 +25,6 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: O(1)
