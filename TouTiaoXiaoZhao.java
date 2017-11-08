@@ -37,7 +37,7 @@ public class Solution {
       Arrays.sort(array);
       int result = 0;
       int t = 1;
-      for (int i = 1; int < n; i++) {
+      for (int i = 1; i < n; i++) {
         if (n < 3) {
           if (array[i] - array[i - 1] <= 10) {
             t++;
