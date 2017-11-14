@@ -42,3 +42,5 @@ public class Solution {
     array[j] = temp;
   }
 }
+
+// comparsion time = 3/2*n
