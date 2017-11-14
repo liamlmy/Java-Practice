@@ -51,3 +51,6 @@ public class Solution {
     return shorter;
   }
 }
+
+// Time complexity: O(height)
+// Space complexity: O(1)
