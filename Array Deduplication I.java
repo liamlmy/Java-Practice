@@ -28,3 +28,6 @@ public class Solution {
     return Arrays.copyOf(array, slow + 1);
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: O(1)
