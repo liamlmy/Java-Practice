@@ -24,3 +24,6 @@ public class Solution {
     return null;
   }
 }
+
+// Time complexity: O(height)
+// Space complexity: O(1)
