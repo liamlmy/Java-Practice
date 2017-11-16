@@ -36,6 +36,9 @@
 //
 //  1     4   6    11
 
+/*
+ * Method 1: Iteration way
+ */
 public class Solution {
   public TreeNode insert(TreeNode root, int key) {
     TreeNode target = new TreeNode(key);
@@ -62,6 +65,28 @@ public class Solution {
       parent.left = target;
     } else {
       parent.right = target;
+    }
+    return root;
+  }
+}
+
+/*
+ * Method 2: Recursion way
+ */
+public class Solution {
+  public TreeNode insert(TreeNode root, int key) {
+    if (root == null) {
+      return new TreeNode(key);
+    }
+    
+    if (root.key > key) {
+      root.left = insert(root.left, key);
+    }
+    if (root.key < key) {
+      root.right = insert(root.right, key);
+    }
+    if (root.key == key) {
+      return root;
     }
     return root;
   }
