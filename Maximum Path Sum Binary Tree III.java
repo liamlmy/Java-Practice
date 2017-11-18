@@ -54,3 +54,6 @@ public class Solution {
     return sin;
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: O(height)
