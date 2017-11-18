@@ -34,6 +34,9 @@
 //
 //     4
 
+/*
+ * Method 1
+ */
 public class Solution {
   public boolean exist(TreeNode root, int target) {
     // Corner check
@@ -65,3 +68,43 @@ public class Solution {
     return false;
   }
 }
+
+/*
+ * Method 2: Use hashset
+ */
+public class Solution {
+  public boolean exist(TreeNode root, int target) {
+    if (root == null) {
+      return false;
+    }
+    Set<Integer> set = new HashSet<>();
+    set.add(0);
+    return DFS(root, target, set, 0);
+  }
+  
+  private boolean DFS(TreeNode root, int target, Set<Integer> set, int prefix) {
+    // Base case
+    if (root == null) {
+      return false;
+    }
+    // Recursion way
+    prefix += root.key;
+    if (set.contains(prefix - target)) {
+      return true;
+    }
+    boolean needAdd = set.add(prefix);
+    if (DFS(root.left, target, set, prefix)) {
+      return true;
+    }
+    if (DFS(root.right, target, set, prefix)) {
+      return true;
+    }
+    if (needAdd) {
+      set.remove(prefix);
+    }
+    return false;
+  }
+}
+
+// Time complexity: O(n)
+// Space complexity: O(height)
