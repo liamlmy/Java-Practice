@@ -52,3 +52,6 @@ public class Solution {
     return root.key + Math.max(left, right);
   }
 }
+
+// Time complexity: O(n);
+// Space complexity: O(height);
