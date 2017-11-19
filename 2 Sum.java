@@ -30,6 +30,9 @@ public class Solution {
     return false;
   } 
 }
+
+// Time complexity: O(nlogn)
+// Space complexity: O(1)
 */
 
 /*
@@ -47,3 +50,6 @@ public class Solution {
     return false;
   }
 }
+
+// Time complexity: O(n)
+// Space complexity: On)
