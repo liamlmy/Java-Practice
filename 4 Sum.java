@@ -34,6 +34,9 @@ public class Solution {
     return false;
   }
 }
+
+// Time complexity: O(n ^ 4)
+// Space complexity: O(1)
 */
 
 /*
