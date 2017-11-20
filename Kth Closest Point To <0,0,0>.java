@@ -6,7 +6,8 @@
 // The three given arrays are not null or empty
 // K >= 1 and K <= a.length * b.length * c.length
 // Return
-// a size 3 integer list, the first element should be from the first array, the second element should be from the second array and the third should be from the third array
+// a size 3 integer list, the first element should be from the first array, the second element should be from the second array
+// and the third should be from the third array
 //
 // Examples
 // A = {1, 3, 5}, B = {2, 4}, C = {3, 6}
