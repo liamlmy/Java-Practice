@@ -61,7 +61,7 @@ public class Solution {
     // Use a boolean matrix to make sure each cell will be visited no more than once.
     boolean[][] visited = new boolean[gym.length][gym[0].length];
     int pathCost = 1;
-    Breadth-First-Search, record the current path cost.
+    // Breadth-First-Search, record the current path cost.
     Queue<Pair> queue = new LinkedList<>();
     visited[i][j] = true;
     queue.offer(new Pair(i, j));
