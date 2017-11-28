@@ -35,6 +35,8 @@ public class Solution {
     Queue<Node> queue=new LinkedList<>();
     int[][][] mp=new int[101][101][1025];
     int[][] next={{-1,0},{0,-1},{1,0},{0,1}};
+    int N = maze.length;
+    int M = maze[0].length;
          
     queue.offer(new Node(si,sj,0,0));
     while(!queue.isEmpty()){
