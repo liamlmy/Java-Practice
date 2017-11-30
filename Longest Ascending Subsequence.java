@@ -91,3 +91,56 @@ public class Solution {
     return right;
   }
 }
+
+/*
+ * Method 3: same to method 2
+ */
+public class Solution {
+  public int longest(int[] array) {
+    // Corner check
+    if (array.length == 0) {
+      return 0;
+    }
+    // Dynamic Programming
+    int[] minLast = new int[array.length + 1];
+    for (int i = 0; i < minLast.length; i++) {
+      if (i == 0) {
+        minLast[i] = Integer.MIN_VALUE;
+      } else {
+        minLast[i] = Integer.MAX_VALUE;
+      }
+    }
+    for (int i = 0; i < array.length; i++) {
+      // Find the smallest index that minLast[index] >= array[i]
+      int index = binarySearch(minLast, array[i]);
+      minLast[index] = array[i];
+    }
+    for (int i = minLast.length - 1; i > 0; i--) {
+      if (minLast[i] != Integer.MAX_VALUE) {
+        return i;
+      }
+    }
+    return 0;
+  }
+  
+  private int binarySearch(int[] minLast, int num) {
+		int start = 0, end = minLast.length - 1;
+		while (start + 1 < end) {
+			int mid = (end - start) / 2 + start;
+			if (minLast[mid] < num) {
+				start = mid + 1;
+			} else if (minLast[mid] > num) {
+				end = mid;
+			} else {
+				start = mid;
+			}
+		}
+		if (start == 0) {
+			return 1;
+		} else if (minLast[start] >= num) {
+			return start;
+		} else {
+			return end;
+		}
+	}
+}
