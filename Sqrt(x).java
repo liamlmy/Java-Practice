@@ -12,6 +12,9 @@
 // Explanation: The square root of 8 is 2.82842..., and since we want to return an integer,
 // the decimal part will be truncated.
 
+/*
+ * Method 1: Binary Search
+ */
 public class Solution {
   public int mySqrt(int x) {
     if (x == 0) {
@@ -30,5 +33,23 @@ public class Solution {
         left = mid + 1;
       }
     }
+  }
+}
+
+/*
+ * Method 2: NewTon
+ */
+public class Solution {
+  public double mySqrt(double x) {
+    if (x == 0.0) {
+      return 0.0;
+    }
+    double last = 0.0;
+    double result = 1.0;
+    while (result != last) {
+      last = result;
+      result = (result + x / result) / 2.0;
+    }
+    return result;
   }
 }
