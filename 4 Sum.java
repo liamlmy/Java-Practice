@@ -55,9 +55,9 @@ public class Solution {
     }
     
     @Override
-    public int comparaTo(Element another) {
+    public int compareTo(Element another) {
       if (this.sum != another.sum) {
-        return this.sum < another.sun ? -1 : 1;
+        return this.sum < another.sum ? -1 : 1;
       } else if (this.right != another.right) {
         return this.right < another.right ? -1 : 1;
       } else if (this.left != another.left) {
@@ -78,7 +78,7 @@ public class Solution {
       // large index.
       if (pairSum[left].sum + pairSum[right].sum == target && pairSum[left].right < pairSum[right].left) {
         return true;
-      } else if (pairSum[left].sum + pariSum[right].sum < target) {
+      } else if (pairSum[left].sum + pairSum[right].sum < target) {
         left++;
       } else {
         // When two pair sums' sum > target, right--
