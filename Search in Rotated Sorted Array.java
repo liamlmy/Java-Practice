@@ -4,37 +4,38 @@
 // You may assume no duplicate exists in the array.
 
 public class Solution {
-  public int search(int[] nums, int target) {
-    int lo = 0;
-    int hi = nums.length - 1;
-    // find the index of the smallest value using binary search.
-    // Loop will terminate since mid < hi, and lo or hi will shrink by at least 1.
-    // Proof by contradiction that mid < hi: if mid==hi, then lo==hi and loop would have been terminated.
-    while (lo < hi) {
-      int mid = (lo + hi) / 2;
-      if (nums[mid] > nums[hi]) {
-        lo = mid + 1;
-      } else {
-        hi = mid;
-      }
+    public int search(int[] nums, int target) {
+        if (nums.length == 0) {
+            return -1;
+        }
+        int left = 0;
+        int right = nums.length - 1;
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > nums[right]) {
+                left = mid + 1;
+            } else {
+                right = mid;
+            }
+        }
+        int rot = left;
+        if (target <= nums[nums.length - 1]) {
+            left = rot;
+            right = nums.length - 1;
+        } else {
+            left = 0;
+            right = rot - 1;
+        }
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] == target) {
+                return mid;
+            } else if (nums[mid] > target) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return -1;
     }
-    // lo==hi is the index of the smallest value and also the number of places rotated.
-    int rot = lo;
-    lo = 0;
-    hi = nums.length - 1;
-    // The usual binary search and accounting for rotation.
-    while (lo <= hi) {
-      int mid = (lo + hi) / 2;
-      int realmid = (mid + rot) % nums.length;
-      if (nums[realmid] == target) {
-        return realmid;
-      }
-      if (nums[realmid] < target) {
-        lo=mid+1;
-      } else {
-        hi = mid - 1;
-      }
-    }
-    return -1;
-  }
 }
