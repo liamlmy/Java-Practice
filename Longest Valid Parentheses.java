@@ -53,38 +53,67 @@ public class Solution {
  */
 public class Solution {
   public int longestValidParentheses(String s) {
-        Deque<Integer> stack = new LinkedList<>();
-        int max = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') {
-                stack.offerFirst(i);
-            } else {
-                if (!stack.isEmpty()) {
-                	if (s.charAt(stack.peekFirst()) == '(') {
-                		stack.pollFirst();
-                	} else {
-                		stack.offerFirst(i);
-                	}
-                } else {
-                	stack.offerFirst(i);
-                }
-            }
-        }
-
+    Deque<Integer> stack = new LinkedList<>();
+    int result = 0;
+    stack.offerFirst(-1);
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i) == '(') {
+        stack.offerFirst(i);
+      } else {
+        stack.pollFirst();
         if (stack.isEmpty()) {
-            return s.length();
+          stack.offerFirst(i);
+        } else {
+          result = Math.max(result, i - stack.peekFirst());
         }
-        int end = s.length();
-        int start = 0;
-        while (!stack.isEmpty()) {
-            start = stack.pollFirst();
-            max = Math.max(max, end - start - 1);
-            end = start;
-        }
-        max = Math.max(max, end);
-        return max;
+      }
     }
+    return result;
+  }
 }
 
 // Time complexity: O(n)
 // Space complexity: O(n)
+
+/*
+ * Method 3: Scan from right to left and from left to right
+ */
+public class Solution {
+    public int longestValidParentheses(String s) {
+        int result = 0;
+        int left = 0;
+        int right = 0;
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == '(') {
+                left++;
+            } else {
+                right++;
+            }
+            if (left < right) {
+                left = 0;
+                right = 0;
+            } else if (left == right) {
+                result = Math.max(result, left + right);
+            }
+        }
+        left = 0;
+        right = 0;
+        for (int i = s.length() - 1; i >= 0; i--) {
+            if (s.charAt(i) == ')') {
+                right++;
+            } else {
+                left++;
+            }
+            if (left == right) {
+                result = Math.max(result, left + right);
+            } else if (left > right) {
+                left = 0;
+                right = 0;
+            }
+        }
+        return result;
+    }
+}
+
+// Time complexity: O(n)
+// Space complexity: O(1)
