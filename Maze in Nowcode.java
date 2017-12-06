@@ -29,6 +29,7 @@ public class Solution {
         }
       }
     }
+    return -1;
   }
   
   private int BFS(char[][] maze, int si, int sj) {
@@ -41,6 +42,7 @@ public class Solution {
     queue.offer(new Node(si,sj,0,0));
     while(!queue.isEmpty()){
       Node node=queue.poll();
+      int key = node.key;
       for(int i=0;i<4;i++){
         int x=node.x+next[i][0];
         int y=node.y+next[i][1];
