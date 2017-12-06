@@ -15,33 +15,36 @@
 // Another correct ordering is[0,2,1,3].
 
 public class Solution {
-  public int[] findOrder(int numCourses, int[][] prerequisites) {
+    public int[] findOrder(int numCourses, int[][] prerequisites) {
+        // 1 step: use a List[] to maintain all the courses taking order
+        // 2 step: use a int[] to maintain how many prerequisites courses for each courses
         List[] graph = new ArrayList[numCourses];
+        int[] indegree = new int[numCourses];
         for (int i = 0; i < numCourses; i++) {
             graph[i] = new ArrayList<Integer>();
         }
-        int[] indegree = new int[numCourses];
         for (int i = 0; i < prerequisites.length; i++) {
             graph[prerequisites[i][1]].add(prerequisites[i][0]);
             indegree[prerequisites[i][0]]++;
         }
         int[] result = new int[numCourses];
         int index = 0;
+        // 3 step: add all courses which have no prerequisites into the queue
         Queue<Integer> queue = new LinkedList<>();
         for (int i = 0; i < indegree.length; i++) {
             if (indegree[i] == 0) {
                 queue.offer(i);
             }
         }
+        // 4 step: BFS
         while (!queue.isEmpty()) {
             Integer cur = queue.poll();
+            List<Integer> next = graph[cur];
             result[index++] = cur;
-            List<Integer> nexts = graph[cur];
-            for (int i = 0; i < nexts.size(); i++) {
-                int nextCourse = nexts.get(i);
-                indegree[nextCourse]--;
-                if (indegree[nextCourse] == 0) {
-                    queue.offer(nextCourse);
+            for (Integer num : next) {
+                indegree[num]--;
+                if (indegree[num] == 0) {
+                    queue.offer(num);
                 }
             }
         }
