@@ -22,40 +22,33 @@
 // Please reload the code definition to get the latest changes.
 
 public class Solution {
-  public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-    Set<String> reached = new HashSet<>();
-    Set<String> dict = getDict(wordList);
-    reached.add(beginWord);
-    int distance = 1;
-    while (!reached.contains(endWord)) {
-      Set<String> toAdd = new HashSet<>();
-      for (String each : reached) {
-        for (int i = 0; i < each.length(); i++) {
-          char[] array = each.toCharArray();
-          for (char c = 'a'; c <= 'z'; c++) {
-            array[i] = c;
-            String candidate = new String(array);
-            if (dict.contains(candidate)) {
-              toAdd.add(candidate);
-              dict.remove(candidate);
-            }
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+      int result = 1;
+      Set<String> dict = new HashSet<>(wordList);
+      Set<String> reached = new HashSet<>();
+      reached.add(beginWord);
+      while (!reached.contains(endWord)) {
+          Set<String> toAdd = new HashSet<>();
+          for (String str : reached) {
+              char[] array = str.toCharArray();
+              for (char ch = 'a'; ch <= 'z'; ch++) {
+                  for (int i = 0; i < array.length; i++) {
+                      char old = array[i];
+                      array[i] = ch;
+                      if (dict.contains(String.valueOf(array))) {
+                          toAdd.add(String.valueOf(array));
+                          dict.remove(String.valueOf(array));
+                      }
+                      array[i] = old;
+                  }
+              }
           }
-        }
+          result++;
+          if (toAdd.size() == 0) {
+              return 0;
+          }
+          reached = toAdd;
       }
-      distance++;
-      if (toAdd.size() == 0) {
-        return 0;
-      }
-      reached = toAdd;
+      return result;
     }
-    return distance;
-  }
-  
-  private Set<String> getDict(List<String> wordList) {
-    Set<String> dict = new HashSet<>();
-    for (String str : wordList) {
-      dict.add(str);
-    }
-    return dict;
-  }
 }
