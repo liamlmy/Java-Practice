@@ -44,13 +44,13 @@ public class Solution {
     }
     // Recursion rule
     if (root.key > min) {
-      findResult(root.left, min, max);
+      findResult(root.left, min, max, result);
     }
     if (root.key >= min && root.key <= max) {
       result.add(root.key);
     }
     if (root.key < max) {
-      findResult(root.right, min, max);
+      findResult(root.right, min, max, result);
     }
   }
 }
