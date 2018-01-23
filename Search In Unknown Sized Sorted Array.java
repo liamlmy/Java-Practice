@@ -29,6 +29,7 @@ public class Solution {
   private int binarySearch(Dictionary dict, int left, int right, int target) {
     while (left <= right) {
       int mid = left + (right - left) / 2;
+      // !Important here
       if (dict.get(mid) == null || dict.get(mid) > target) {    // We should first judge whether right is out of bound
         right = mid - 1;
       } else if (dict.get(mid) < target) {
