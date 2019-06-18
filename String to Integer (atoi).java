@@ -15,6 +15,11 @@ public class Solution {
 		while (i < n && str.charAt(i) == ' ') {
 			i++;
 		}
+	  
+	  	if (i >= n) {
+			return 0;
+		}
+	  
 		boolean positive = true;
 		if (str.charAt(i) == '+' || str.charAt(i) == '-') {
 			positive = (str.charAt(i) == '+');
