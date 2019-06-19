@@ -41,3 +41,38 @@ public class Solution {
         DFS(candidates, solution, result, target, index + 1);
     }
 }
+
+class Solution {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        Set<List<Integer>> result = new HashSet<>();
+        List<Integer> cur = new ArrayList<>();
+        Arrays.sort(candidates);
+        DFS(candidates, target, cur, result, 0);
+        return new ArrayList<>(result);
+    }
+    
+    private void DFS(int[] candidates, int target, List<Integer> cur, Set<List<Integer>> result, int index) {
+        // base case
+        if (target == 0) {
+            result.add(new ArrayList<>(cur));
+            return;
+        }
+        
+        if (target < 0 || index == candidates.length) {
+            return;
+        }
+        
+        // recursion rule
+        for (int i = index; i < candidates.length; i++) {
+            if (candidates[i] > target) {
+                break;
+            }
+            if (i > index && candidates[i] == candidates[i - 1]) {
+                continue;
+            }
+            cur.add(candidates[i]);
+            DFS(candidates, target - candidates[i], cur, result, i + 1);
+            cur.remove(cur.size() - 1);
+        }
+    }
+}
