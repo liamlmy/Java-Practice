@@ -6,7 +6,7 @@
 public class Solution {
   TreeNode first;
   TreeNode second;
-  TreeNode prev = new TreeNode(Integer.MIN_VALUE);
+  TreeNode prev;
   
   public void recoverTree(TreeNode root) {
     inOrderTraverse(root);
@@ -20,11 +20,13 @@ public class Solution {
     }
     // Recursion rule
     inOrderTraverse(root.left);
-    if (first == null && prev.val >= root.val) {
-      first = prev;
-    }
-    if (first != null && prev.val >= root.val) {
+    if (prev != null && root.val < prev.val) {
       second = root;
+      if (first == null) {
+        first = prev;
+      } else {
+        return;
+      }
     }
     prev = root;
     inOrderTraverse(root.right);
