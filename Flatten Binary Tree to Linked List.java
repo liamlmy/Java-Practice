@@ -25,7 +25,7 @@
  */
 /*
 public class Solution {
-  TreeNode prev = null;
+  TreeNode next = null;
   
   public void flatten(TreeNode root) {
     // Base case
@@ -35,9 +35,9 @@ public class Solution {
     // Recursion rule
     flatten(root.right);
     flatten(root.left);
-    root.right = prev;
+    root.right = next;
     root.left = null;
-    prev = root;
+    next = root;
   }
 }
 */
