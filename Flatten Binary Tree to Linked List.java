@@ -43,7 +43,35 @@ public class Solution {
 */
 
 /*
- * Method 2: Iteration way
+ * Method 2: Recursion way
+ */
+/*
+class Solution {
+    TreeNode prev = null;
+    
+    public void flatten(TreeNode root) {
+        // corner case
+        if (root == null) {
+            return;
+        }
+        
+        // recursion rule
+        TreeNode originRight = root.right;
+        
+        if (prev != null) {
+            prev.right = root;
+            prev.left = null;
+        }
+        
+        prev = root;
+        flatten(root.left);
+        flatten(originRight);
+    }
+}
+*/
+
+/*
+ * Method 3: Iteration way
  */
 public class Solution {
   public void flatten(TreeNode root) {
