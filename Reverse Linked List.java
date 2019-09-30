@@ -46,3 +46,29 @@ public class Solution {
     return prev;
   }
 }
+
+/*
+ * Method 3: Iteration way
+ */
+public class Solution {
+  public ListNode reverse(ListNode head) {
+    // Corner check
+    if (head == null || head.next == null) {
+      return head;
+    }
+    // Iteration way
+    ListNode dummy = new ListNode(0);
+    dummy.next = head;
+    ListNode prev = dummy;
+    ListNode next = head.next;
+    head.next = null;
+    while (next != null) {
+      prev.next = next;
+      next = next.next;
+      prev.next.next = head;
+      head = prev.next;
+    }
+    
+    return dummy.next;
+  }
+}
