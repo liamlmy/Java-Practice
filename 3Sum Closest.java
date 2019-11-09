@@ -5,26 +5,20 @@
 
 public class Solution {
     public int threeSumClosest(int[] nums, int target) {
-        int result = Integer.MAX_VALUE;
+        int result = 99999999;
+        Arrays.sort(nums);
         for (int i = 0; i < nums.length - 2; i++) {
             int left = i + 1;
             int right = nums.length - 1;
             while (left < right) {
-                int sum = nums[left] + nums[right];
-                if (sum + nums[i] == target) {
-                    return target;
-                } else if (sum + nums[i] < target) {
-                    result = Math.min(Math.abs(target - result), Math.abs(target - sum - nums[i]));
-                    while (left < right && nums[left] == nums[left + 1]) {
-                        left++;
-                    }
-                    left++;
+                int sum = nums[left] + nums[right] + nums[i];
+                result = Math.abs(target - sum) < Math.abs(target - result) ? sum : result;
+                if (sum == target) {
+                	return result;
+                } else if (sum > target) {
+                	right--;
                 } else {
-                    result = Math.min(Math.abs(target - result), Math.abs(target - sum - nums[i]));
-                    while (left < right && nums[right - 1] == nums[right]) {
-                        right--;
-                    }
-                    right--;
+                	left++;
                 }
             }
         }
