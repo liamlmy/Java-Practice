@@ -15,26 +15,27 @@
 //          / \
 //          \_/
 
-public class Solution {
-  public UndirectedGraphNode cloneGraph(UndirectedGraphNode node) {
-    Map<UndirectedGraphNode, UndirectedGraphNode> map = new HashMap<>();
-    return clone(node, map);
-  }
-  
-  private UndirectedGraphNode clone(UndirectedGraphNode node, Map<UndirectedGraphNode, UndirectedGraphNode> map) {
-    // Base case
-    if (node == null) {
-      return null;
+class Solution {
+    public Node cloneGraph(Node node) {
+        if (node == null) {
+            return null;
+        }
+        Map<Node, Node> graph = new HashMap<>();
+        return clone(node, graph);
     }
-    if (map.containsKey(node)) {
-      return map.get(node);
+    
+    private Node clone(Node node, Map<Node, Node> graph) {
+        // base case
+        if (graph.containsKey(node)) {
+            return graph.get(node);
+        }
+        
+        // recursion rule
+        Node newNode = new Node(node.val, new ArrayList<>());
+        graph.put(node, newNode);
+        for (Node neighbor : node.neighbors) {
+            newNode.neighbors.add(clone(neighbor, graph));
+        }
+        return newNode;
     }
-    // Recursion rule
-    UndirectedGraphNode clone = new UndirectedGraphNode(node.label);
-    map.put(node, clone);
-    for (UndirectedGraphNode nei : node.neighbors) {
-      clone.neighbors.add(clone(nei, map));
-    }
-    return clone;
-  }
 }
