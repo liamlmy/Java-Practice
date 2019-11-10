@@ -21,6 +21,7 @@ class Solution {
         if (root == null) {
             return 0;
         }
+        
         // Recursion rule
         int left = Math.max(0, DFS(root.left, max));
         int right = Math.max(0, DFS(root.right, max));
