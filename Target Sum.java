@@ -18,6 +18,7 @@
 // The sum of elements in the given array will not exceed 1000.
 // Your output answer is guaranteed to be fitted in a 32-bit integer.
 
+// DPS
 class Solution {
     public int findTargetSumWays(int[] nums, int S) {
         return findTargetSumWays(nums, 0, S);
@@ -31,5 +32,30 @@ class Solution {
 
     	// recursion rule
     	return findTargetSumWays(nums, idx + 1, S - nums[idx]) + findTargetSumWays(nums, idx + 1, S + nums[idx]);
+    }
+}
+
+// DP
+class Solution {
+    public int findTargetSumWays(int[] nums, int S) {
+        int sum = 0;
+        for (int n : nums) {
+        	sum += n;
+        }
+        if (S > sum || (S + sum) % 2 == 1) {
+        	return 0;
+        }
+        return findPositiveSum(nums, (S + sum) / 2);
+    }
+
+    private int findPositiveSum(int[] nums, int positive) {
+    	int[] dp = new int[positive + 1];
+    	dp[0] = 1;
+    	for (int i = 0; i < nums.length; i++) {
+    		for (int j = positive; j >= nums[i]; j--) {
+    			dp[j] += dp[j - nums[i]];
+    		}
+    	}
+    	return dp[dp.length - 1];
     }
 }
