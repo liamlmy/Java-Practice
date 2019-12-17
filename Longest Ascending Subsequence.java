@@ -144,3 +144,38 @@ public class Solution {
 		}
 	}
 }
+
+/*
+ * Method 4: same to method 2
+ */
+class Solution {
+    public int lengthOfLIS(int[] nums) {
+        if (nums.length <= 1) {
+            return nums.length;
+        }
+        int[] dp = new int[nums.length];
+        dp[0] = nums[0];
+        int result = 1;
+        for (int i = 1; i < nums.length; i++) {
+            int index = findSmallestLarger(dp, 0, result, nums[i]);
+            if (index == result) {
+                dp[result++] = nums[i];
+            } else {
+                dp[index] = nums[i];
+            }
+        }
+        return result;
+    }
+
+    private int findSmallestLarger(int[] dp, int left, int right, int target) {
+        while (left < right) {
+            int mid = left + (right - left) / 2;
+            if (dp[mid] >= target) {
+                right = mid;
+            } else {
+                left = mid + 1;
+            }
+        }
+        return right;
+    }
+}
