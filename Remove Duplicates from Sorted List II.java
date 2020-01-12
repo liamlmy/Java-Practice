@@ -27,3 +27,29 @@ public class Solution {
         return dummy.next;
     }
 }
+
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        if (head == null || head.next == null) {
+            return head;
+        }
+        
+        ListNode dummy = new ListNode(0);
+        ListNode slow = dummy;
+        ListNode fast = head;
+        while (fast != null) {
+            if (fast.next == null || fast.next.val != fast.val) {
+                slow.next = fast;
+                slow = slow.next;
+                fast = fast.next;
+                slow.next = null;
+            } else {
+                while (fast.next != null && fast.val == fast.next.val) {
+                    fast = fast.next;
+                }
+                fast = fast.next;
+            }
+        }
+        return dummy.next;
+    }
+}
