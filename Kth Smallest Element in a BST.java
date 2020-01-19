@@ -25,3 +25,26 @@ public class Solution {
     return 1 + countNodes(root.left) + countNodes(root.right);
   }
 }
+
+class Solution {
+    int cnt = 0;
+
+    public int kthSmallest(TreeNode root, int k) {
+        Deque<TreeNode> stack = new LinkedList<>();
+        TreeNode cur = root;
+        while (cur != null || !stack.isEmpty()) {
+            if (cur != null) {
+                stack.offerFirst(cur);
+                cur = cur.left;
+            } else {
+                cur = stack.pollFirst();
+                cnt++;
+                if (cnt == k) {
+                    return cur.val;
+                }
+                cur = cur.right;
+            }
+        }
+        return root.val;
+    }
+}
